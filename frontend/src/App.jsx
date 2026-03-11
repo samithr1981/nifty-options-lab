@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, Tooltip, ReferenceLine, ResponsiveContainer, Legend, CartesianGrid, Cell, ScatterChart, Scatter, ZAxis } from "recharts";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const RAW_CHAIN = [
   {strike:22000,call_oi:null,call_iv:null,call_ltp:null,put_ltp:0.15,put_iv:59.17,put_oi:29131},
@@ -866,6 +867,7 @@ export default function App() {
       <div style={{textAlign:"center",padding:"10px",fontSize:11,color:"#334155",borderTop:`1px solid ${border}`}}>
         FOR EDUCATIONAL USE ONLY · NOT INVESTMENT ADVICE · Black-Scholes assumes constant IV and log-normal returns
       </div>
+      <SpeedInsights />
     </div>
   );
 }
