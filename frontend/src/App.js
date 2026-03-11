@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, Tooltip, ReferenceLine, ResponsiveContainer, Legend, CartesianGrid, Cell, ScatterChart, Scatter, ZAxis } from "recharts";
+import { LineChart, Line, BarChart, Bar, XAxis, YAxis, Tooltip, ReferenceLine, ResponsiveContainer, Legend, CartesianGrid, Cell, } from "recharts";
 
 const RAW_CHAIN = [
   {strike:22000,call_oi:null,call_iv:null,call_ltp:null,put_ltp:0.15,put_iv:59.17,put_oi:29131},
@@ -505,7 +505,7 @@ export default function App() {
           }));
           const atmIV = smileData.find(r=>r.isATM);
           const avgCallIV = +(smileData.filter(r=>r.callIV).reduce((s,r)=>s+r.callIV,0)/smileData.filter(r=>r.callIV).length).toFixed(1);
-          const avgPutIV  = +(smileData.filter(r=>r.putIV ).reduce((s,r)=>s+r.putIV ,0)/smileData.filter(r=>r.putIV ).length).toFixed(1);
+          
           const maxSkew   = smileData.reduce((b,r)=>r.skew!=null&&r.skew>b.skew?r:b,{skew:-Infinity});
           return (
             <div>
